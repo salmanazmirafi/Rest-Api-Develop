@@ -1,9 +1,10 @@
 const User = require("../../modules/usermoduels");
+const bcrypt = require("bcrypt");
 
 exports.singnCon = async (req, res, next) => {
-  const { name, username, email, password, profile } = req.body;
-
   try {
+    req.body.password = await bcrypt.hash(req.body.password, 11);
+    const { name, username, email, password, profile } = req.body;
     const user = await User.create({
       name,
       username,
