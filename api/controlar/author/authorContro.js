@@ -1,6 +1,8 @@
 const User = require("../../modules/usermoduels");
 const bcrypt = require("bcrypt");
 
+// Sign Up
+
 exports.singnCon = async (req, res, next) => {
   try {
     req.body.password = await bcrypt.hash(req.body.password, 11);
@@ -21,4 +23,10 @@ exports.singnCon = async (req, res, next) => {
       message: "Somthing went wrong",
     });
   }
+};
+
+// Log In
+
+exports.loginCon = async (req, res, next) => {
+  res.send("HI I'm Log in");
 };
