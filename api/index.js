@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use("/singup", sinUp);
 app.use("/login", login);
-app.use("/users", userRout);
+app.use("/user", userRout);
 
 //Routes
 const PORT = process.env.PORT || 4000;
