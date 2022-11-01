@@ -59,3 +59,5 @@ exports.loginCon = async (req, res, next) => {
     });
   }
 };
+
+// Get All Users

@@ -4,6 +4,7 @@ const connectBD = require("./config/connectDB");
 const dotenv = require("dotenv");
 const sinUp = require("./Routes/Auth/signUp");
 const login = require("./Routes/Auth/login");
+const userRout = require("./Routes/users/usersRout");
 dotenv.config();
 
 app.use(express.json());
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use("/singup", sinUp);
 app.use("/login", login);
+app.use("/users", userRout);
 
 //Routes
 const PORT = process.env.PORT || 4000;
