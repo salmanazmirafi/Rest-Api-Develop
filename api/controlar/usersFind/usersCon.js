@@ -34,3 +34,25 @@ exports.updateUser = async (req, res, next) => {
     });
   }
 };
+// Delete User
+
+exports.deleteUser = async (req, res, next) => {
+  const userId = req.params.userId;
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(400).json({
+        message: "Wrong User",
+      });
+    }
+    const userDelet = await User.findByIdAndDelete(userId);
+    res.status(200).json({
+      message: "User Seccessfule Delete",
+      userDelet,
+    });
+  } catch (error) {
+    res.status(401).json({
+      message: "You can deleted only your account",
+    });
+  }
+};
