@@ -6,6 +6,7 @@ const sinUp = require("./Routes/Auth/signUp");
 const login = require("./Routes/Auth/login");
 const userRout = require("./Routes/users/usersRout");
 const postRoute = require("./Routes/postRouts");
+const catagoryRout = require("./Routes/catagorys");
 dotenv.config();
 
 app.use(express.json());
@@ -17,7 +18,8 @@ app.use("/login", login);
 app.use("/user", userRout);
 // post routes
 app.use("/posts", postRoute);
-
+//catagorys routs
+app.use("/catagorys", catagoryRout);
 //Routes
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

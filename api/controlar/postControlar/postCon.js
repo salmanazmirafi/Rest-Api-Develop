@@ -81,8 +81,20 @@ exports.postDeleted = async (req, res, next) => {
     });
   } catch (error) {
     res.status(401).json({
-      message: "Your can Update your account",
+      message: "Your can Delete your account",
       error,
+    });
+  }
+};
+// get single Post
+exports.getsinglePost = async (req, res, next) => {
+  const postId = req.params.postId;
+  try {
+    const post = await Post.findById(postId);
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(400).json({
+      message: "Somthig Went wrong",
     });
   }
 };
