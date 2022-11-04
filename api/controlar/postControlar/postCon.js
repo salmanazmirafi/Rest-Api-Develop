@@ -19,5 +19,9 @@ exports.createPost = async (req, res, next) => {
     });
   }
 };
+// Get All Post
+exports.getAllPost = async (req, res, next) => {
+  res.send("HI! I'm All Get Data");
+};
 // Update Post
 // Delete Post
